@@ -1,0 +1,11 @@
+<mat-list>
+  <mat-list-item *ngFor="let team of teams">
+    <img matListAvatar src="https://www.countryflags.io/{{ team.fifa_code.substring(0, team.fifa_code.length - 1) }}/flat/64.png"
+      alt="...">
+    <h3 matLine> {{team.country}} </h3>
+    <p matLine>
+      <span> {{team.fifa_code}} </span>
+      <!-- <span class="demo-2"> -- {{message.content}} </span> -->
+    </p>
+  </mat-list-item>
+</mat-list>
