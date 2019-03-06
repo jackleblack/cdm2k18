@@ -10,7 +10,7 @@ export class Match {
     public fifa_id: string,
     public weather: Weather,
     public attendance: string,
-    public officials?: (string)[] | null,
+    public officials: (string)[] | null,
     public stage_name: string,
     public home_team_country: string,
     public away_team_country: string,
@@ -19,8 +19,8 @@ export class Match {
     public winner_code: string,
     public home_team: HomeTeamOrAwayTeam,
     public away_team: HomeTeamOrAwayTeam,
-    public home_team_events?: (HomeTeamEventsEntityOrAwayTeamEventsEntity)[] | null,
-    public away_team_events?: (HomeTeamEventsEntityOrAwayTeamEventsEntity)[] | null,
+    public home_team_events: (HomeTeamEventsEntityOrAwayTeamEventsEntity)[] | null,
+    public away_team_events: (HomeTeamEventsEntityOrAwayTeamEventsEntity)[] | null,
     public home_team_statistics: HomeTeamStatisticsOrAwayTeamStatistics,
     public away_team_statistics: HomeTeamStatisticsOrAwayTeamStatistics,
     public last_event_update_at: string,
@@ -35,8 +35,8 @@ export class MatchAdapter implements Adapter<Match> {
 
   adapt(item: any): Match {
     return new Match(
-      item.venue
-,      item.location,
+      item.venue,
+      item.location,
       item.status,
       item.time,
       item.fifa_id,
