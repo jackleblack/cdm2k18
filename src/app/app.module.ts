@@ -15,6 +15,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 import { MyTableComponent } from './my-table/my-table.component';
 import { MatchListComponent } from './match-list/match-list.component';
+import { MatchDetailComponent } from './match-detail/match-detail.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { MatchListComponent } from './match-list/match-list.component';
     MyNavComponent,
     MyDashboardComponent,
     MyTableComponent,
-    MatchListComponent
+    MatchListComponent,
+    MatchDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { MatchListComponent } from './match-list/match-list.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTabsModule
+    MatTabsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

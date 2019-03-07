@@ -1,0 +1,10 @@
+.mat-card-content{
+    font-size: 5em;
+    text-align: center;
+}
+.winner .mat-card-content{ 
+    color: green;
+}
+.looser .mat-card-content{ 
+    color: red;
+}

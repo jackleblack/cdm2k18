@@ -1,35 +1,9 @@
 <mat-tab-group>
   <mat-tab label="{{matchByStage.stage_name}}" *ngFor="let matchByStage of matchesByStage">
 
-    <mat-grid-list cols="4" gutterSize="40px"  >
+    <mat-grid-list cols="4" gutterSize="40px">
       <mat-grid-tile *ngFor="let match of matchByStage.groupItem">
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>{{match.home_team.country}}</mat-card-title>
-            <mat-card-subtitle>Buts {{match.home_team.goals}}</mat-card-subtitle>
-          </mat-card-header>
-          <!-- <img mat-card-image max-height="100px" src="https://restcountries.eu/data/{{ team.flag }}.svg" alt="Photo of a Shiba Inu"> -->
-          <mat-card-content>
-            <!-- {{team.text}} -->
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>Voir</button>
-          </mat-card-actions>
-        </mat-card>
-        VS
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>{{match.away_team.country}}</mat-card-title>
-            <mat-card-subtitle>But {{match.away_team.goals}}</mat-card-subtitle>
-          </mat-card-header>
-          <!-- <img mat-card-image max-height="100px" src="https://restcountries.eu/data/{{ team.flag }}.svg" alt="Photo of a Shiba Inu"> -->
-          <mat-card-content>
-            <!-- {{team.text}} -->
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>Voir</button>
-          </mat-card-actions>
-        </mat-card>
+        <app-match-detail [match]="match"></app-match-detail>
       </mat-grid-tile>
     </mat-grid-list>
   </mat-tab>
