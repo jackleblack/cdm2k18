@@ -18,7 +18,9 @@ export class TeamService {
     const url = `${this.baseUrl}/`;
     return this.http.get(url).pipe(
       // Adapt each item in the raw data array
-      map((data: any[]) => data.map(item => this.adapter.adapt(item))),
+      map((data: any[]) => data.sort((a, b) => {
+        return a.country < b.country ? -1 : 1;
+      }).map(item => this.adapter.adapt(item))),
     );
 
   }

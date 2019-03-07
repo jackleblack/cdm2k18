@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Adapter } from '../adapter';
 
+import * as CountryCodes from 'country-code-info';
+
 export class Team {
   constructor(
     public id: number,
@@ -17,6 +19,7 @@ export class Team {
     public goals_for: number,
     public goals_against: number,
     public goal_differential: number,
+    public flag: string
   ) { }
 }
 
@@ -40,7 +43,8 @@ export class TeamAdapter implements Adapter<Team> {
       item.points,
       item.goals_for,
       item.goals_against,
-      item.goal_differential
+      item.goal_differential,
+      CountryCodes.findCountry({'fifa': item.fifa_code}).a3.toLowerCase()
     )
   }
 }

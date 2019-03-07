@@ -87,7 +87,11 @@ THE SOFTWARE.
 
 @angular/material/button
 
+@angular/material/card
+
 @angular/material/core
+
+@angular/material/grid-list
 
 @angular/material/icon
 

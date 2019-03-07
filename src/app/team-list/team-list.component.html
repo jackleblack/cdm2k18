@@ -1,11 +1,20 @@
-<mat-list>
-  <mat-list-item *ngFor="let team of teams">
-    <img matListAvatar src="https://www.countryflags.io/{{ team.fifa_code.substring(0, team.fifa_code.length - 1) }}/flat/64.png"
-      alt="...">
-    <h3 matLine> {{team.country}} </h3>
-    <p matLine>
-      <span> {{team.fifa_code}} </span>
-      <!-- <span class="demo-2"> -- {{message.content}} </span> -->
-    </p>
-  </mat-list-item>
-</mat-list>
+<mat-grid-list cols="6" rowHeight="1:1.4"  gutterSize="10px"  >
+  <mat-grid-tile
+      *ngFor="let team of teams">
+      <mat-card  >
+        <mat-card-header>
+          <mat-card-title>{{team.country}}</mat-card-title>
+          <mat-card-subtitle>Group {{team.group_letter}}</mat-card-subtitle>
+        </mat-card-header>
+        <!-- <img mat-card-image src="https://www.countryflags.io/{{ team.fifa_code.substring(0, team.fifa_code.length - 1) }}/flat/64.png" alt="Photo of a Shiba Inu"> -->
+        <img mat-card-image max-height="100px" src="https://restcountries.eu/data/{{ team.flag }}.svg" alt="Photo of a Shiba Inu">
+        <!-- <img mat-card-image src="{{ getFirstImageURL('italy')}}" alt="Photo of a Shiba Inu"> -->
+        <mat-card-content>
+          {{team.text}}
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Voir</button>
+        </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
