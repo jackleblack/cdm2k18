@@ -6,12 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { TeamListComponent } from './team-list/team-list.component';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule, MatTabsModule} from '@angular/material';
 import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 import { MyTableComponent } from './my-table/my-table.component';
 import { MatchListComponent } from './match-list/match-list.component';
@@ -44,7 +44,8 @@ import { MatchListComponent } from './match-list/match-list.component';
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,19 +10,24 @@ import { MatchService } from "../core/match.service";
 })
 export class MatchListComponent implements OnInit {
 
-  matches: Match[];
+  matchesByStage: Match[];
 
   // (2) Inject
   constructor(private matchService: MatchService) {
-    this.matches = [];
+    this.matchesByStage = [];
   }
 
   ngOnInit() {
     // (3) Subscribe
     this.matchService.list().subscribe((matches: Match[]) => {
       // (4) Store
-      this.matches = matches;
-      console.log(matches);
+      this.matchesByStage = matches.reverse().reduce((r, { stage_name }) => {
+        if (!r.some(o => o.stage_name == stage_name)) {
+          r.push({ stage_name, groupItem: matches.filter(v => v.stage_name == stage_name) });
+        }
+        return r;
+      }, []);
+      console.log(this.matchesByStage);
     });
   }
 }
