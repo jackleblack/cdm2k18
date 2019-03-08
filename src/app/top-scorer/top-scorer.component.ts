@@ -11,11 +11,11 @@ import { MatchService } from "../core/match.service";
 })
 export class TopScorerComponent implements OnInit {
 
-  topScorers: Player[];
+  // topScorers: Player[];
 
   // (2) Inject
   constructor(private matchService: MatchService) {
-    this.topScorers = [];
+    // this.topScorers = [];
   }
 
   ngOnInit() {

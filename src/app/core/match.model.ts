@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Adapter } from '../adapter';
 
+import * as CountryCodes from 'country-code-info';
+
 export class Match {
   constructor(
     public venue: string,    
@@ -92,12 +94,32 @@ export interface Weather {
   wind_speed: string;
   description: string;
 }
-export interface HomeTeamOrAwayTeam {
-  country: string;
-  code: string;
-  goals: number;
-  penalties: number;
+
+@Injectable({
+  providedIn: 'root'
+})
+export class HomeTeamOrAwayTeamAdapter implements Adapter<HomeTeamOrAwayTeam> {
+
+  adapt(item: any): HomeTeamOrAwayTeam {
+    return new HomeTeamOrAwayTeam(
+      item.country,
+      item.code,
+      item.goals,
+      item.penalties,
+      CountryCodes.findCountry({'fifa': item.code}).a3.toLowerCase()
+    )
+  }
 }
+export class HomeTeamOrAwayTeam {
+  constructor(
+    public country: string,    
+    public code: string,
+    public goals: number,
+    public penalties: number,
+    public flag: string
+  ) {}
+}
+
 export interface HomeTeamEventsEntityOrAwayTeamEventsEntity {
   id: number;
   type_of_event: string;
