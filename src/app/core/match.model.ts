@@ -134,3 +134,9 @@ export interface StartingElevenEntityOrSubstitutesEntity {
   shirt_number: number;
   position: string;
 }
+
+export class Player {
+  name: string;
+  team: HomeTeamOrAwayTeam;
+  goal: number;
+}

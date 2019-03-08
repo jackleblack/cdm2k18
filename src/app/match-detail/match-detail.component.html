@@ -3,9 +3,8 @@
   <mat-card [ngClass]="match.winner_code == match.home_team.code ? 'winner' : 'looser'">
     <mat-card-header>
       <mat-card-title>{{match.home_team.country}}</mat-card-title>
-      <!-- <mat-card-subtitle>Buts {{match.home_team.goals}}</mat-card-subtitle> -->
+      <img mat-card-avatar src="https://restcountries.eu/data/{{match.home_team.flag }}.svg" alt="Country flag">
     </mat-card-header>
-    <!-- <img mat-card-image max-height="100px" src="https://restcountries.eu/data/{{ team.flag }}.svg" alt="Photo of a Shiba Inu"> -->
     <mat-card-content>
       {{ match.home_team.goals}}
     </mat-card-content>
@@ -19,7 +18,7 @@
   <mat-card [ngClass]="match.winner_code == match.away_team.code ? 'winner' : 'looser'">
     <mat-card-header>
       <mat-card-title>{{match.away_team.country}}</mat-card-title>
-      <!-- <mat-card-subtitle>But {{match.away_team.goals}}</mat-card-subtitle> -->
+      <img mat-card-avatar src="https://restcountries.eu/data/{{ match.away_team.flag }}.svg" alt="Country flag">
     </mat-card-header>
     <!-- <img mat-card-image max-height="100px" src="https://restcountries.eu/data/{{ team.flag }}.svg" alt="Photo of a Shiba Inu"> -->
     <mat-card-content>

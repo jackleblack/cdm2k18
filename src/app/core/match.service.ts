@@ -22,4 +22,14 @@ export class MatchService {
     );
 
   }
+
+  // topScorer(): Observable<Match[]> {
+  //   const url = `${this.baseUrl}/`;
+  //   return this.http.get(url).pipe(
+  //     // Adapt each item in the raw data array
+  //     // map((data: any[]) => data.pluck('home_team_events').filter(home_team_event => home_team_event.type_of_event === "goal"))),
+  //     map((data: any[]) => data.pluck('home_team_events').filter(home_team_event => home_team_event.type_of_event === "goal"))),
+  //   );
+
+  // }
 }

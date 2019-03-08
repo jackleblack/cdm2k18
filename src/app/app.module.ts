@@ -17,6 +17,7 @@ import { MyTableComponent } from './my-table/my-table.component';
 import { MatchListComponent } from './match-list/match-list.component';
 import { MatchDetailComponent } from './match-detail/match-detail.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TopScorerComponent } from './top-scorer/top-scorer.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MyDashboardComponent,
     MyTableComponent,
     MatchListComponent,
-    MatchDetailComponent
+    MatchDetailComponent,
+    TopScorerComponent
   ],
   imports: [
     BrowserModule,
